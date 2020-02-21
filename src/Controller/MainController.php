@@ -19,13 +19,13 @@ class MainController extends AbstractController
      */
     public function index(Request $request)
     {
-//        if (!is_null($request->get('date')) && new DateTime($request->get('date')) !== false) {
-//            $date = new DateTime($request->get('date'));
-//        } else {
-//            $date = new DateTime();
-//        }
+        if (!is_null($request->get('date')) && new DateTime($request->get('date')) !== false) {
+            $date = new DateTime($request->get('date'));
+        } else {
+            $date = new DateTime();
+        }
 
-        $result = ["hello" => "world"];
+        $result = ["hello" => $date];
 
         return $this->json($result);
     }
