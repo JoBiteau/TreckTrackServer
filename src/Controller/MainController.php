@@ -19,8 +19,11 @@ class MainController extends AbstractController
      */
     public function index(Request $request)
     {
-        if (!is_null($request->get('date')) && new DateTime($request->get('date')) !== false) {
-            $date = new DateTime($request->get('date'));
+        $data = json_decode($request->getContent(), true);
+
+        if (isset($data['date']))  {
+            $date = new DateTime($data['date']);
+
         } else {
             $date = new DateTime();
         }
