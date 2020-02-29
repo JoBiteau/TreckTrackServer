@@ -44,7 +44,6 @@ class MainController extends AbstractController
      */
         public function addSpots(Request $request, UserRepository $userRepo)
     {
-        dd("ok add");
         $data = json_decode($request->getContent(), true);
 
         if (isset($data['user']))  {
@@ -57,7 +56,7 @@ class MainController extends AbstractController
 
         $result = ["hello" => $date];
 
-        return $this->json($result);
+        return $this->json($data);
     }
 
 }
